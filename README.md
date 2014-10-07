@@ -7,6 +7,7 @@ A simple demo application showing off the request re-firing feature of the [angu
 Installation
 ======================
 1. Install node.js
-2. Open a terminal. Navigate to the angular-http-auth-demo directory
-3. Run `npm install`
-4. Run `bower install`
+2. Clone the repository
+3. Open a terminal. Navigate to the angular-http-auth-demo directory
+4. Run `npm install`
+5. Run `bower install`
