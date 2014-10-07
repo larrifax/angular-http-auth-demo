@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Demo</title>
+  </head>
+  
+  <body ng-app="app" ng-controller="mainCtrl as main">
+
+    <div ng-if="main.loggedIn">
+      You are logged in. <button ng-click="main.logOut()">Log out</button>
+      <hr>
+    </div>
+    
+    <div ng-if="!main.loggedIn && !main.shouldShowLogin">
+      <button ng-click="main.shouldShowLogin = true">Log in</button>
+      <hr>
+    </div>
+
+    <form ng-show="main.shouldShowLogin" ng-controller="loginCtrl as login" ng-submit="login.login()">
+      <label>
+        Username:
+        <input type="text" name="username" ng-model="login.credentials.username">
+      </label>
+      <label>
+        Password:
+        <input type="password" name="password" ng-model="login.credentials.password">
+      </label>
+      <button type="submit">Log in</button>
+    </form>
+
+    <div ng-if="!main.shouldShowLogin" ng-view></div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
